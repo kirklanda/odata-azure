@@ -4,4 +4,4 @@ Connect-AzureRmAccount -ServicePrincipal -Tenant $connection.TenantID `
 
 $AzureContext = Select-AzureRmSubscription -SubscriptionId $connection.SubscriptionID
 
-Get-AzureRmResource
+Get-AzureRmResource -ResourceGroupName "Dev-RG" -AzureRmContext $AzureContext
