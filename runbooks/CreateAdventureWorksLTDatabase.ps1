@@ -8,7 +8,7 @@
 Param(
 	[string]$ResourceGroupName,
 	[string]$AdminUser,
-	[string]$AdminPassword,
+	[string]$AdminPassword
 )
 
 
