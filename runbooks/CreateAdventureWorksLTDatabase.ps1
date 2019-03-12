@@ -6,9 +6,9 @@
 #==============================================================================
 # Parameters
 Param(
-	[string]$ResourceGroupName
-	[string]$AdminUser
-	[string]$AdminPassword
+	[string]$ResourceGroupName,
+	[string]$AdminUser,
+	[string]$AdminPassword,
 )
 
 
