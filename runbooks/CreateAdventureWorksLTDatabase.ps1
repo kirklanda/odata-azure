@@ -35,7 +35,7 @@ $EndIP = "0.0.0.0"
 # In the Azure portal look in Connections property for the Automation Account.
 $connection = Get-AutomationConnection -Name AzureRunAsConnection
 
-Connect-Account -ServicePrincipal -Tenant $connection.TenantID `
+Connect-AzAccount -ServicePrincipal -Tenant $connection.TenantID `
 -ApplicationId $connection.ApplicationID -CertificateThumbprint $connection.CertificateThumbprint
 
 $AzureContext = Set-AzContext -SubscriptionId $connection.SubscriptionID
