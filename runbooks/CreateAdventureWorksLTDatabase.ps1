@@ -42,5 +42,20 @@ $AzureContext = Set-AzContext -SubscriptionId $connection.SubscriptionID
 
 
 #==============================================================================
+# Create a SQL Server, Firewall rule and AdventureWorksLT Database
+$server = New-AzSqlServer -ResourceGroupName $ResourceGroupName `
+	-ServerName $ServerName `
+	-SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredentials -ArgumentList $AdminUser, $(ConvertTo-SecureString -String $AdminPassword -AsPlainText -Force))
 
-Get-AzResource -ResourceGroupName $ResourceGroupName -DefaultProfile $AzureContext
+
+# Create a server firewall rule that allows access from the specified IP addresses
+$serverFirewallRule = New-AzSqlServerFirewallRule -ResourceGroupName $ResourceGroupName `
+	-ServerName $ServerName `
+	-FirewallRuleName "AllowIPs" -StartIpAddress $StartIP -EndIpAddress $EndIP
+
+
+$database = New-AzSqlDatabase -ResourceGroupName $ResourceGroupName `
+	-ServerName $ServerName `
+	-DatabaseName $DatabaseName `
+	-RequestedServiceObjectiveName $RequestedServiceObjectiveName `
+	-SampleName "AdventureWorksLT"
