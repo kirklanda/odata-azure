@@ -15,7 +15,7 @@ Param(
 #==============================================================================
 # Variables
 # Corresponds to the pricing tier to use.  Use the most basic for development.
-$RequestedServiceObjectiveName = "B"
+$RequestedServiceObjectiveName = "Basic"
 
 # The logical server name
 $ServerName = "server-$(Get-Random)"
