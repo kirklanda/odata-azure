@@ -23,6 +23,9 @@ $ServerName = "server-$(Get-Random)"
 # The sample database name
 $DatabaseName = "DevSampleDB"
 
+# The Location to create the resources
+$Location = "australiasoutheast"
+
 # The IP address range that is allowed access to the server
 $StartIP = "0.0.0.0"
 $EndIP = "0.0.0.0"
@@ -45,6 +48,7 @@ $AzureContext = Set-AzContext -SubscriptionId $connection.SubscriptionID
 # Create a SQL Server, Firewall rule and AdventureWorksLT Database
 $server = New-AzSqlServer -ResourceGroupName $ResourceGroupName `
 	-ServerName $ServerName `
+	-Location $Location `
 	-SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $AdminUser, $(ConvertTo-SecureString -String $AdminPassword -AsPlainText -Force))
 
 
