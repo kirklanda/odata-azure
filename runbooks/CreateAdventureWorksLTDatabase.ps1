@@ -6,8 +6,11 @@
 #==============================================================================
 # Parameters
 Param(
-	[string]$ResourceGroupName,
-	[string]$AdminUser,
+	[Parameter(Mandatory=$true)]
+	[string]$ResourceGroupName = "Dev-RG",
+	[Parameter(Mandatory=$true)]
+	[string]$AdminUser = "SqlAdmin",
+	[Parameter(Mandatory=$true)]
 	[string]$AdminPassword
 )
 
@@ -18,10 +21,10 @@ Param(
 $RequestedServiceObjectiveName = "Basic"
 
 # The logical server name
-$ServerName = "server-$(Get-Random)"
+$ServerName = "server-castnet-dev-db"
 
 # The sample database name
-$DatabaseName = "DevSampleDB"
+$DatabaseName = "DevAdventureWorksLT"
 
 # The Location to create the resources
 $Location = "australiasoutheast"
