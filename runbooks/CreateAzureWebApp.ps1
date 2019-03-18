@@ -21,4 +21,4 @@ $Location = "australiasoutheast"
 $NumberOfWorkers = 1
 $WorkerSize = "Small"
 
-$appServicePlan = New-AzAppServicePlan -ResourceGroupName $ResourceGroupName -Name $AppServicePlanName -Tier $Tier -NumberOfWorkers $NumberOfWorkers
+$appServicePlan = New-AzAppServicePlan -ResourceGroupName $ResourceGroupName -Name $AppServicePlanName -Location $Location -Tier $Tier -NumberOfWorkers $NumberOfWorkers
