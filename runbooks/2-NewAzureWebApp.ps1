@@ -4,6 +4,8 @@
 # Parameters
 Param(
 	[Parameter(Mandatory=$true)]
+	[Type]$AzureContext,
+	[Parameter(Mandatory=$true)]
 	[string]$ResourceGroupName = "Dev-RG",
 	[Parameter(Mandatory=$true)]
 	[string]$AppServicePlanName = "OData-App-Svc-Plan"
