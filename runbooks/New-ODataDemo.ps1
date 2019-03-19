@@ -16,4 +16,4 @@ $AzureContext = Set-AzContext -SubscriptionId $connection.SubscriptionID
 #==============================================================================
 # Create the Azure Web App that will provide the backend API onto the AdventureWorksLT database.
 
-New-AzureWebApp.ps1 -AzureContext $AzureContext
+.\New-AzureWebApp.ps1

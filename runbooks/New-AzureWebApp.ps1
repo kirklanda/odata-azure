@@ -3,8 +3,8 @@
 #==============================================================================
 # Parameters
 Param(
-	[Parameter(Mandatory=$true)]
-	[Type]$AzureContext,
+#	[Parameter(Mandatory=$true)]
+#	[Microsoft.Azure.Commands.Profile.Models.Core.PSAzureContext]$AzureContext,
 	[Parameter(Mandatory=$true)]
 	[string]$ResourceGroupName = "Dev-RG",
 	[Parameter(Mandatory=$true)]
