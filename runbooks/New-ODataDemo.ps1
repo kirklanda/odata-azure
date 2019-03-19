@@ -1,5 +1,5 @@
 #==============================================================================
-# The top level script for creating a complete OData API environment
+# The top level script for creating a complete OData API environment.
 
 
 #==============================================================================
